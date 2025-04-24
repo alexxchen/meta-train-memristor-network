@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:1.2-cuda10.0-cudnn7-devel AS memoristor-env 
+FROM pytorch/pytorch:1.5-cuda10.1-cudnn7-devel AS memoristor-env 
 
 # RUN apt-get update && \
 #     apt-get upgrade -y && \
