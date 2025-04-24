@@ -5,5 +5,5 @@ FROM pytorch/pytorch:1.5-cuda10.1-cudnn7-devel AS memoristor-env
 #     apt-get install -y git
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install memtorch-cpu
+    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install memtorch-cpu, mpi4py
     
