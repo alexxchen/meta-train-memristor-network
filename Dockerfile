@@ -1,7 +1,7 @@
 FROM pytorch/pytorch:1.5-cuda10.1-cudnn7-devel AS memoristor-env 
 
 RUN apt-get update && \
-    apt-get install libopenmpi-dev openmpi-bin openmpi-common openmpi-doc
+    apt-get install -y libopenmpi-dev openmpi-bin openmpi-common openmpi-doc
 #     apt-get upgrade -y && \
 #     apt-get install -y git
 
