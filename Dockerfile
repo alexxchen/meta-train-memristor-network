@@ -1,5 +1,8 @@
 FROM pytorch/pytorch:1.5-cuda10.1-cudnn7-devel AS memoristor-env 
 
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
 RUN apt-get update && \
     apt-get install -y libopenmpi-dev openmpi-bin openmpi-common openmpi-doc
 #     apt-get upgrade -y && \
