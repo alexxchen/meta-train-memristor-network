@@ -9,5 +9,5 @@ RUN apt-get update && \
 #     apt-get install -y git
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install memtorch-cpu mpi4py
+    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install memtorch-cpu mpi4py wandb
     
