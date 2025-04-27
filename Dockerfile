@@ -14,7 +14,10 @@ ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL True
 # RUN --mount=type=cache,target=/root/.cache/pip \
 #      python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0
 
-RUN git clone --recursive https://github.com/coreylammie/MemTorch && \
-    cd MemTorch && \
-    python3 -m pip install .
+RUN --mount=type=cache,target=/root/.cache/pip \
+     python3 -m pip install memtorch --no-build-isolation
+     
+# RUN git clone --recursive https://github.com/coreylammie/MemTorch && \
+#     cd MemTorch && \
+#     python3 -m pip install .
     
