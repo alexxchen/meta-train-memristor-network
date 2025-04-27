@@ -1,5 +1,7 @@
 FROM pytorch/pytorch:1.5-cuda10.1-cudnn7-devel AS memoristor-env 
 
+ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL True
+
 RUN rm /etc/apt/sources.list.d/cuda.list
 RUN rm /etc/apt/sources.list.d/nvidia-ml.list
 
@@ -9,9 +11,9 @@ RUN apt-get update && \
 #     apt-get install -y git
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0
+     python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0
 
 RUN git clone --recursive https://github.com/coreylammie/MemTorch
 RUN cd MemTorch
-RUN python setup.py install
+RUN python3 setup.py install
     
