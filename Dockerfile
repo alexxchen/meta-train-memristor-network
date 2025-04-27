@@ -9,5 +9,9 @@ RUN apt-get update && \
 #     apt-get install -y git
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install memtorch-cpu mpi4py wandb gymnasium numpy==1.21.0
+    SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0
+
+RUN git clone --recursive https://github.com/coreylammie/MemTorch
+RUN cd MemTorch
+RUN python setup.py install
     
