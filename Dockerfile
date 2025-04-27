@@ -13,7 +13,7 @@ RUN apt-get update && \
 RUN --mount=type=cache,target=/root/.cache/pip \
      python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0
 
-RUN git clone --recursive https://github.com/coreylammie/MemTorch
-RUN cd MemTorch
-RUN python3 -m pip install .
+RUN git clone --recursive https://github.com/coreylammie/MemTorch && \
+    cd MemTorch && \
+    python3 -m pip install .
     
