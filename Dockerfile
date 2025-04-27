@@ -15,5 +15,5 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 RUN git clone --recursive https://github.com/coreylammie/MemTorch
 RUN cd MemTorch
-RUN python3 setup.py install
+RUN pip install .
     
