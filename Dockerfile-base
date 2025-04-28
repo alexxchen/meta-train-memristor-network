@@ -12,4 +12,7 @@ RUN apt-get update && \
 #     apt-get install -y git
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-     python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0 sklearn
+     python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0 sklearn 
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+     python3 -m pip install torch==1.7.0+cpu torchvision==0.8.0+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
