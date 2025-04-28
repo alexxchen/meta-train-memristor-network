@@ -8,7 +8,9 @@ ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL True
 # RUN rm /etc/apt/sources.list.d/nvidia-ml.list
 
 RUN apt-get update && \
-    apt-get install -y openssh-server libopenmpi-dev openmpi-bin openmpi-common openmpi-doc git
+    apt-get install -y openssh-server libopenmpi-dev openmpi-bin openmpi-common openmpi-doc git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN --mount=type=cache,target=/root/.cache/pip \
      python3 -m pip install mpi4py wandb gymnasium numpy==1.21.0 scikit-learn
