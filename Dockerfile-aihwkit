@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel AS torch-env 
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel AS torch-env 
 
 # RUN --mount=type=cache,target=/root/.cache/pip \
 #     python3 -m pip install git+https://github.com/IBM/aihwkit.git
@@ -6,5 +6,7 @@ FROM pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel AS torch-env
 RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip install wandb gymnasium==0.28.1 tyro scikit-build>=0.11.1
 
+RUN wget https://aihwkit-gpu-demo.s3.us-east.cloud-object-storage.appdomain.cloud/aihwkit-0.9.2+cuda121-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python3 -m pip install aihwkit==0.9.2
+    python3 -m pip install aihwkit-0.9.2+cuda121-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
