@@ -2,3 +2,6 @@ FROM pytorch/pytorch:2.6.0-cuda12.6-cudnn9-devel AS torch-env
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip install git+https://github.com/IBM/aihwkit.git
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python3 -m pip install tyro
