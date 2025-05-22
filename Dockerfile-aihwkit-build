@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y libopenblas-dev
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python3 -m pip install cmake>=3.18 scikit-build>=0.11.1 scikit-learn pybind11>=2.6.2 scipy requests>=2.25,<3 numpy>=1.22,<2 protobuf>=4.21.6 tqdm mypy==0.991
+    python3 -m pip install cmake>=3.18 scikit-build>=0.11.1 scikit-learn pybind11>=2.6.2 scipy requests>=2.25 numpy>=1.22 protobuf>=4.21.6 tqdm mypy==0.991
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip install aihwkit
