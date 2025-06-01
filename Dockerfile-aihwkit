@@ -9,4 +9,4 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip install aihwkit-0.9.2+cuda121-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python3 -m pip install wandb gymnasium==0.28.1 tyro
+    python3 -m pip install wandb gymnasium==0.28.1 tyro tensorboard swanlab
